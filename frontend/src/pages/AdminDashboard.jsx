@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/menu").then((res) => setMenu(res.data));
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/menu`).then((res) => setMenu(res.data));
   }, []);
 
   return (
