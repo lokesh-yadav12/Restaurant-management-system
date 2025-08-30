@@ -14,16 +14,19 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       localStorage.setItem("userInfo", JSON.stringify(data));
-      
+
       // Dispatch custom event to notify navbar and other components
       window.dispatchEvent(new Event("authChange"));
-      
+
       toast.success("Login Successful 🎉");
 
       setTimeout(() => navigate("/dashboard"), 500);
@@ -40,9 +43,9 @@ const Login = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white w-full max-w-md p-6 rounded-2xl shadow-lg"
+        className="bg-white w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-lg flex flex-col"
       >
-        <h2 className="text-3xl font-extrabold mb-8 text-center text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-extrabold mb-8 text-center text-gray-800">
           Login to <span className="text-blue-600">EZCHEF</span>
         </h2>
 
@@ -63,7 +66,9 @@ const Login = () => {
 
         {/* Password */}
         <div className="mb-6">
-          <label className="block text-gray-700 mb-1 font-medium">Password</label>
+          <label className="block text-gray-700 mb-1 font-medium">
+            Password
+          </label>
           <input
             type="password"
             placeholder="Enter your password"
@@ -91,15 +96,25 @@ const Login = () => {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
-        <div className="text-center">
-          <p className="text-gray-600 mb-2">New to EZCHEF?</p>
+        {/* Buttons Row */}
+        <div className="flex flex-col sm:flex-row justify-between gap-4 mt-auto">
           <button
             type="button"
             onClick={() => navigate("/register")}
-            className="text-blue-600 hover:underline font-medium"
+            className="w-full sm:w-1/2 bg-gray-300 hover:bg-gray-200 text-blue-600 py-2 rounded-lg font-medium transition-all duration-200"
             disabled={isLoading}
           >
             Create an Account
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>window.open("https://restaurant-management-system-fson.vercel.app/", "_blank")
+}
+            className="w-full sm:w-1/2 bg-gray-300 hover:bg-gray-200 text-blue-600 py-2 rounded-lg font-medium transition-all duration-200"
+            disabled={isLoading}
+          >
+            Login as Admin
           </button>
         </div>
       </form>
