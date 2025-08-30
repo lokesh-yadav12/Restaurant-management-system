@@ -1,7 +1,7 @@
 import express from "express";
 import { addProduct, getProducts,removeProduct } from "../controllers/productController.js";
 import upload from "../middleware/uploadMiddleware.js";
-import Product from "../models/product.js";
+import Product from "../models/Product.js";
 const router = express.Router();
 
 router.get("/list", async (req, res) => {
