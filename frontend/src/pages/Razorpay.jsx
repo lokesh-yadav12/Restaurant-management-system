@@ -14,7 +14,7 @@ const Razorpay = () => {
         return;
       }
 
-      const { data: order } = await axios.post("http://localhost:5000/api/payment/create-order", {
+      const { data: order } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/create-order`, {
         amount: totalPrice,
       });
 
@@ -27,7 +27,7 @@ const Razorpay = () => {
         order_id: order.id,
         handler: async function (response) {
           const verifyRes = await axios.post(
-            "http://localhost:5000/api/payment/verify-payment",
+            `${import.meta.env.VITE_BACKEND_URL}/api/payment/verify-payment`,
             response
           );
           if (verifyRes.data.success) {
