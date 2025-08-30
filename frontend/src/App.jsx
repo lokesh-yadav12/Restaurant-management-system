@@ -19,7 +19,7 @@ import Analytics from "./pages/Analytics";
 import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 import Payment from "./pages/Payment";
-import Stripe from "./pages/stripe";
+import Stripe from "./pages/Stripe";
 import Razorpay from "./pages/Razorpay";
 import ShowReservations from "./pages/ShowReservations";
 import Complain from "./pages/Complain";
@@ -41,7 +41,7 @@ export default function App() {
           <Route path="/show-reservations" element={<ShowReservations />} />
           <Route path="/complain" element={<Complain />} />
             <Route path="/payment" element={<Payment />} />
-            <Route path="/stripe" element={<Stripe />} />
+            <Route path="/Stripe" element={<Stripe />} />
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/razorpay" element={<Razorpay />} />
           <Route path="/" element={<Home />} />
