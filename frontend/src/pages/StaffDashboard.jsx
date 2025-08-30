@@ -5,7 +5,7 @@ const StaffDashboard = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/orders").then((res) => setOrders(res.data));
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders`).then((res) => setOrders(res.data));
   }, []);
 
   return (
