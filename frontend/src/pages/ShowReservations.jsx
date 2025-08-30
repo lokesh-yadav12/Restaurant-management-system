@@ -7,7 +7,7 @@ const ShowReservations = () => {
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/reservations");
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/reservations`);
         setReservations(res.data);
       } catch (err) {
         console.error("Error fetching reservations", err);
