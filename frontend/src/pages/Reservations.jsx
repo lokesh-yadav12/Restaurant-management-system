@@ -9,7 +9,7 @@ const Reservations = () => {
 
   const handleReservation = async (form) => {
     try {
-      await axios.post("http://localhost:5000/api/reservations", form);
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/reservations`, form);
       setMsg("Reservation booked successfully!");
     } catch (err) {
       setMsg("Error booking reservation");
