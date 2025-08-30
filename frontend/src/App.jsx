@@ -23,7 +23,7 @@ import Stripe from "./pages/stripe";
 import Razorpay from "./pages/Razorpay";
 import ShowReservations from "./pages/ShowReservations";
 import Complain from "./pages/Complain";
-import Dashboard from "./pages/DashBoard";
+import Dashboard from "./pages/Dashboard";
 
 function PrivateRoute({ children, roles }) {
   const { user } = useAuth();
