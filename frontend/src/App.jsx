@@ -11,7 +11,6 @@ import StaffDashboard from "./pages/StaffDashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { useAuth } from "./context/AuthContext";
-import Dashboard from "./pages/DashBoard";
 import About from "./pages/About";
 import { CartProvider } from "./context/CartContext";
 import Contact from "./pages/Contact";
@@ -24,6 +23,7 @@ import Stripe from "./pages/stripe";
 import Razorpay from "./pages/Razorpay";
 import ShowReservations from "./pages/ShowReservations";
 import Complain from "./pages/Complain";
+import Dashboard from "./pages/DashBoard";
 
 function PrivateRoute({ children, roles }) {
   const { user } = useAuth();
